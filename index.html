@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <fieldset>
+        <div class="container">
+            <input type="number" id="num">
+            <button onclick="submit()" id="btn"> submit </button>
+        </div>
+    </fieldset>
+
+</body>
+<script>
+    let flooredNum = Math.floor(Math.random() * 100)
+    console.log(flooredNum)
+
+
+
+    let number_of_guess = 0;
+    let score;
+    function scores() {
+
+        score = 100 - (number_of_guess * 10)
+        console.log(score);
+
+    }
+
+    function submit() {
+        let num = document.getElementById("num").value
+        console.log(num)
+
+        console.log(number_of_guess)
+
+
+
+        if (num < flooredNum) {
+            console.log("enter greater than " + num)
+        }
+        else if (num > flooredNum) { console.log("enter less  than " + num) }
+
+
+
+        function greater_or_lesser() {
+            if (num > 0 && num < 100) {
+
+                console.log("The number you entered is in the correct range")
+            }
+            else (console.log("the number you entered is not in range"))
+        };
+        greater_or_lesser()
+        function result() {
+
+            if (number_of_guess >= 5) {
+                alert("limit exceeded")
+            }
+            else if (num == flooredNum) {
+                scores()
+                console.log("your score is " + score, " , you have entered the correct number",);
+                alert("you have guessed the right number");
+            }
+            else (console.log("try again"))
+        }
+        result()
+        number_of_guess++;
+
+    }
+
+        //        if( num === flooredNum){
+        //     //    let btn = document.getElementById('btn').disabled = t
+        //        console.log("btn")
+        //        }
+        // else (submit())
+
+
+
+
+
+
+</script>
+
+</html>
